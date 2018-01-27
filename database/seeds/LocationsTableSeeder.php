@@ -13601,7 +13601,7 @@ class LocationsTableSeeder extends Seeder
 
         
         foreach($locations as $location) {
-            App\Location::create($location);
+            recreo\Location::create($location);
         }
     }
 }
