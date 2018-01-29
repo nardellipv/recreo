@@ -27,7 +27,9 @@ class CreateUsersTable extends Migration
 
             // Relaciones
 
-            $table->foreign('school_id')->references('id')->on('schools');
+            $table->foreign('school_id')->references('id')->on('schools')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');;
         });
     }
 

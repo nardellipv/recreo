@@ -41,7 +41,7 @@ class CitiesTableSeeder extends Seeder
         ];
 
         foreach ($cities as $city) {
-            App\City::create($city);
+            recreo\City::create($city);
         }
     }
 }
