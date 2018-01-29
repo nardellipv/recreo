@@ -5,7 +5,17 @@
         <div class="col-md-8 col-md-offset-2">
             <h2>escuela <b>{{$school->name}}</b></h2>
             <div class="panel panel-default">
-                <div class="panel-heading">Listado de alumnos </div>
+                <div class="panel-heading">Listado de alumnos    
+                    <a href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                             document.getElementById('logout-form').submit();">
+                    Logout
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form> 
+            </div>
                 <div class="panel-body">
                     @if (session('status'))
                     <div class="alert alert-success">
