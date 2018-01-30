@@ -14,10 +14,72 @@
             <ul class="list">
                 <li class="header">Menú</li>
                 <li class="active">
-                    <a href="../../index.html">
+                    <a href="{{ route('home') }}">
                             <i class="material-icons">home</i>
-                            <span>Home</span>
+                            <span>Panel Pricipal</span>
                         </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="menu-toggle">
+                                <i class="material-icons">person_add</i>
+                                <span>Inscripciones</span>
+                            </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="../../pages/charts/morris.html">Inscribir alumnos</a>
+                        </li>
+                        <li>
+                            <a href="../../pages/charts/flot.html">Inscribir docentes</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="menu-toggle">
+                                <i class="material-icons">list</i>
+                                <span>Listados</span>
+                            </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="../../pages/charts/morris.html">Listado de alumnos</a>
+                        </li>
+                        <li>
+                            <a href="../../pages/charts/flot.html">Listado de docentes</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="menu-toggle">
+                                <i class="material-icons">done_all</i>
+                                <span>Exámenes</span>
+                            </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="../../pages/charts/morris.html">Listado de alumnos aprobados</a>
+                        </li>
+                        <li>
+                            <a href="../../pages/charts/flot.html">Ingresar notas de exámenes</a>
+                        </li>
+                    </ul>
+                </li>
+               
+                <li>
+                    <a href="{{ route('home') }}">
+                                <i class="material-icons">settings</i>
+                                <span>Perfíl del colegio</span>
+                            </a>
+                </li>
+                <li>
+                    <a href="{{ route('home') }}">
+                                <i class="material-icons">help</i>
+                                <span>Preguntas frecuentes</span>
+                            </a>
+                </li>
+                <li>
+                    <a href="{{route('logout') }}" onclick="event.preventDefault();
+                             document.getElementById('logout-form').submit();">
+                             <i class="material-icons">exit_to_app</i>
+                             <span>Salir</span>
+                </a>
                 </li>
             </ul>
         </div>

@@ -1,16 +1,15 @@
 @extends('layouts.main') 
 @section('content')
-@include('layouts.dashboard.cards')
-<div class="container">
+    @include('layouts.dashboard.cards') 
+    @include('layouts.dashboard.documentation') 
+    @include('layouts.dashboard.help') 
+   
+ {{--<div class="container">
     <div class="row">
         <div class="col-md-8">
             <h2>escuela <b>{{$school->name}}</b></h2>
             <div class="panel panel-default">
                 <div class="panel-heading">Listado de alumnos
-                    <a href="{{route('logout') }}" onclick="event.preventDefault();
-                             document.getElementById('logout-form').submit();">
-                    Logout
-                </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         {{ csrf_field() }}
                     </form>
@@ -85,5 +84,6 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
+
 @endsection

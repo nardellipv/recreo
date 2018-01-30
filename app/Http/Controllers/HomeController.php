@@ -33,10 +33,30 @@ class HomeController extends Controller
 
         $school = School::where('id', '=', Auth::user()->school_id)->first();
 
+        //contadores
+        $teachersCount = Teacher::where('school_id', '=', Auth::user()->school_id)
+            ->count();
+
+        $studentsCount = Student::where('school_id', '=', Auth::user()->school_id)
+            ->count();
+
+        $studentsCountLevel1 = Student::where('school_id', '=', Auth::user()->school_id)
+            ->where('level', '=', 1)
+            ->count();
+
+        $studentsCountLevel2 = Student::where('school_id', '=', Auth::user()->school_id)
+            ->where('level', '=', 2)
+            ->count();
+
         return view('home', [
             'students' => $students,
             'school' => $school,
             'teachers' => $teachers,
+            'studentsCount' => $studentsCount,
+            'teachersCount' => $teachersCount,
+            'studentsCountLeve1' => $studentsCountLevel1,
+            'studentsCountLeve2' => $studentsCountLevel2,
         ]);
     }
+
 }
