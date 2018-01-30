@@ -28,7 +28,7 @@
     <link href="{{ asset('css/theme/all-themes.css') }}" rel="stylesheet" />
 </head>
 
-<body class="theme-red">
+<body class="theme-indigo">
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">

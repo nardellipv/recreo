@@ -1,21 +1,20 @@
 @extends('layouts.main') 
 @section('content')
+@include('layouts.dashboard.cards')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-8">
             <h2>escuela <b>{{$school->name}}</b></h2>
             <div class="panel panel-default">
-                <div class="panel-heading">Listado de alumnos    
-                    <a href="{{ route('logout') }}"
-                    onclick="event.preventDefault();
+                <div class="panel-heading">Listado de alumnos
+                    <a href="{{route('logout') }}" onclick="event.preventDefault();
                              document.getElementById('logout-form').submit();">
                     Logout
                 </a>
-
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    {{ csrf_field() }}
-                </form> 
-            </div>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+                </div>
                 <div class="panel-body">
                     @if (session('status'))
                     <div class="alert alert-success">
@@ -51,7 +50,6 @@
                         {{ $students->render() }}
                     </div>
                 </div>
-                
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading">Listado de profesores </div>
@@ -81,7 +79,7 @@
                                 </tr>
                                 @endforeach
                             </tbody>
-                        </table>                        
+                        </table>
                     </div>
                 </div>
             </div>
