@@ -1,6 +1,6 @@
 @section('contentUser')
 <form class="form-horizontal" method="POST" action="{{ route('register') }}">
-        {{ csrf_field() }}
+    {{ csrf_field() }}
     <div class="signup-box">
         <div class="card">
             <div class="body">
@@ -40,6 +40,35 @@
                                 <strong>{{ $errors->first('email') }}</strong>
                             </span> @endif
                     </div>
+                </div>
+                <div class="input-group">
+                    <select name="city" class="form-control show-tick">
+                                    <option value="">-- Seleccione su Provincia --</option>                                    
+                                    <option value="2">CIUDAD AUTÓNOMA DE BUENOS AIRES</option>                                    
+                                    <option value="6">BUENOS AIRES</option>
+                                    <option value="10">CATAMARCA</option>
+                                    <option value="14">CÓRDOBA</option>
+                                    <option value="18">CORRIENTES</option>                                    
+                                    <option value="22">CHACO</option>                                    
+                                    <option value="26">CHUBUT</option>                                    
+                                    <option value="30">ENTRE RÍOS</option>                                    
+                                    <option value="34">FORMOSA</option>                                    
+                                    <option value="38">JUJUY</option>                                    
+                                    <option value="42">LA PAMPA</option>                                    
+                                    <option value="46">LA RIOJA</option>                                    
+                                    <option value="50">MENDOZA</option>                                    
+                                    <option value="54">MISIONES</option>                                    
+                                    <option value="58">NEUQUÉN</option>                                    
+                                    <option value="62">RÍO NEGRO</option>                                    
+                                    <option value="66">SALTA</option>                                    
+                                    <option value="70">SAN JUAN</option>                                    
+                                    <option value="74">SAN LUIS</option>                                    
+                                    <option value="78">SANTA CRUZ</option>                                    
+                                    <option value="82">SANTA FE</option>                                    
+                                    <option value="86">SANTIAGO DEL ESTERO</option>                                    
+                                    <option value="90">TUCUMÁN</option>                                    
+                                    <option value="94">TIERRA DEL FUEGO</option>                                    
+                                </select>
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">

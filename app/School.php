@@ -10,6 +10,10 @@ class School extends Model
     protected $fillable = [
         'name', 'address', 'postal_code', 'phone', 'type', 'director1', 'director2', 'email', 'first_time', 'city_id', 'location_id',
     ];
+    
+    protected $guarded = [
+        'email', 'city_id', 'location_id',
+    ];
 
     public function users()
     {

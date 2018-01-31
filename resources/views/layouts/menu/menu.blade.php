@@ -61,9 +61,8 @@
                         </li>
                     </ul>
                 </li>
-               
                 <li>
-                    <a href="{{ route('home') }}">
+                    <a href="{{ url('school') }}">
                                 <i class="material-icons">settings</i>
                                 <span>Perfíl del colegio</span>
                             </a>
@@ -75,11 +74,13 @@
                             </a>
                 </li>
                 <li>
-                    <a href="{{route('logout') }}" onclick="event.preventDefault();
-                             document.getElementById('logout-form').submit();">
-                             <i class="material-icons">exit_to_app</i>
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+                        <i class="material-icons">exit_to_app</i>
                              <span>Salir</span>
-                </a>
+                    </a>
+                    <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
                 </li>
             </ul>
         </div>

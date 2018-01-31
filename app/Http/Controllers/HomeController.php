@@ -3,9 +3,11 @@
 namespace recreo\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
+use recreo\Http\Middleware\Profile;
 use recreo\School;
 use recreo\Student;
 use recreo\Teacher;
+use recreo\User;
 
 class HomeController extends Controller
 {
@@ -17,6 +19,8 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+
+        $this->middleware(Profile::class);
     }
 
     /**
@@ -57,6 +61,7 @@ class HomeController extends Controller
             'studentsCountLeve1' => $studentsCountLevel1,
             'studentsCountLeve2' => $studentsCountLevel2,
         ]);
+
     }
 
 }

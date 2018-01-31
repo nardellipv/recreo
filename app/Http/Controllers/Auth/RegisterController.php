@@ -73,7 +73,7 @@ class RegisterController extends Controller
         ]); */
 
         $school = School::create([
-
+            'city_id' => $data['city'],
             'email' => $data['email'],
 
         ]);

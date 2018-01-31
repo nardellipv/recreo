@@ -2,8 +2,8 @@
 
 namespace recreo\Http\Controllers;
 
-use recreo\Cities;
 use Illuminate\Http\Request;
+use recreo\Cities;
 
 class CitiesController extends Controller
 {
@@ -14,7 +14,12 @@ class CitiesController extends Controller
      */
     public function index()
     {
-        //
+
+    }
+
+    public function city()
+    {
+       
     }
 
     /**
