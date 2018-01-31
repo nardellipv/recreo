@@ -64,4 +64,9 @@ class HomeController extends Controller
 
     }
 
+    public function faq()
+    {
+        return view('faq.faq');
+    }
+
 }

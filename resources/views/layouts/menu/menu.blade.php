@@ -68,7 +68,7 @@
                             </a>
                 </li>
                 <li>
-                    <a href="{{ route('home') }}">
+                    <a href="{{ route('faq') }}">
                                 <i class="material-icons">help</i>
                                 <span>Preguntas frecuentes</span>
                             </a>
