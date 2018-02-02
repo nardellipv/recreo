@@ -38,9 +38,9 @@
                                     </div>
                                 </td>
                             </tr>
-    @include('students.profilestudent')
-    @include('students.deletestudent') 
-    @include('students.editstudent') 
+    @include('modalstudents.profilestudent')
+    @include('modalstudents.deletestudent') 
+    @include('modalstudents.editstudent') 
     @endforeach
                         </tbody>
                     </table>
