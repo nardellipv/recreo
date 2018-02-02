@@ -20,4 +20,8 @@ Route::get('/faq', 'HomeController@faq')->name('faq');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::resource('/school', 'SchoolController');
+// Route::resource('/lists/students', 'StudentController');
+Route::resource('/students', 'StudentController');
+Route::resource('/teachers', 'TeacherController');

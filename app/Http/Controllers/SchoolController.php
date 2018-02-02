@@ -15,7 +15,6 @@ class SchoolController extends Controller
 {
     public function __construct()
     {
-
         $this->middleware('auth');
     }
 
@@ -106,15 +105,11 @@ class SchoolController extends Controller
     public function update(SchoolRequest $request, $id)
     {
         $school = School::find($id);
-        $school->active = 1;
+        $school->active = 'SI';
         $school->fill($request->all())->save();
 
         Session::flash('message', 'Perfil editado correctamente');
         return Redirect::to('school');
-
-        /* return redirect()->URL('school', $school->schoolId)
-    ->with('message', 'Perfil editado correctamente'); */
-
     }
 
     /**

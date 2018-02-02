@@ -40,10 +40,10 @@
                             </a>
                     <ul class="ml-menu">
                         <li>
-                            <a href="../../pages/charts/morris.html">Listado de alumnos</a>
+                            <a href="{{ url('/students')}}">Listado de alumnos</a>
                         </li>
                         <li>
-                            <a href="../../pages/charts/flot.html">Listado de docentes</a>
+                            <a href="{{ url('/teachers')}}">Listado de docentes</a>
                         </li>
                     </ul>
                 </li>

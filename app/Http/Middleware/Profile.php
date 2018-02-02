@@ -21,7 +21,7 @@ class Profile
         $schoolProfile = School::where('schools.id', '=', Auth::user()->school_id)
             ->first();
 
-        if ($schoolProfile->active == 0) {
+        if ($schoolProfile->active == 'NO') {
             Session::flash('messageUpdate', '¡Antes de continuar! Por favor antes de continuar complete los datos del colegio.');
             return redirect('school');
         }

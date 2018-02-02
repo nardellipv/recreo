@@ -2,19 +2,29 @@
 
 namespace recreo\Http\Controllers;
 
-use recreo\Teacher;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
+use recreo\Http\Middleware\Profile;
+use recreo\Teacher;
 
 class TeacherController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+
+        $this->middleware(Profile::class);
+    }
     public function index()
     {
-        //
+        $teachers = Teacher::where('school_id', '=', Auth::user()->school_id)
+            ->get();
+
+        return view('lists.teachers.teacher', [
+            'teachers' => $teachers,
+        ]);
     }
 
     /**
@@ -44,9 +54,11 @@ class TeacherController extends Controller
      * @param  \recreo\Teacher  $teacher
      * @return \Illuminate\Http\Response
      */
-    public function show(Teacher $teacher)
+    public function show(Teacher $id)
     {
-        //
+        $teacher = Teacher::findOrFail($id);
+
+        return view('teachers.profileteacher');
     }
 
     /**
@@ -67,9 +79,19 @@ class TeacherController extends Controller
      * @param  \recreo\Teacher  $teacher
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Teacher $teacher)
+    public function update(Request $request, $id)
     {
-        //
+
+        $teacher = Teacher::findOrFail($id);
+        if ($request->first_time == 'SI') {
+            $teacher->fill($request->all())->save();
+        } else {
+            $teacher->first_time = 'NO';
+            $teacher->fill($request->all())->save();
+        }
+
+        Session::flash('message', 'Perfil editado correctamente');
+        return Redirect::to('teachers');
     }
 
     /**
@@ -78,8 +100,12 @@ class TeacherController extends Controller
      * @param  \recreo\Teacher  $teacher
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Teacher $teacher)
+    public function destroy($id)
     {
-        //
+        $teacher = Teacher::findOrFail($id);
+        $teacher->delete();
+
+        Session::flash('message', 'Alumno <b>' . $teacher->name . ' ' . $teacher->lastname . '</b> eliminado correctamente');
+        return Redirect::to('teachers');
     }
 }
