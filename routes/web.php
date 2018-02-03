@@ -25,7 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/school', 'SchoolController');
 
 Route::resource('/students', 'StudentController');
-Route::get('/addstudent/student', 'StudentController@create');
+Route::get('/approve', 'StudentController@listApprove')->name('approve');
 
 Route::resource('/teachers', 'TeacherController');
 Route::get('addteacher/teacher', 'TeacherController@create');

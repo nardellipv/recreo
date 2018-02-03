@@ -8,10 +8,7 @@
         <div class="card">
             <div class="header">
                 <h2>
-                    Listado de alumnos
-                    <p class="header-dropdown">
-                        <a href="{{ url('addstudent/student') }}" class="btn bg-indigo waves-effect">agregar nuevo alumno</a>
-                    </p>
+                    Listado de alumnos aprobados
                 </h2>
             </div>
             <div class="body">
@@ -27,7 +24,6 @@
                                 <th width="35">1ra Nota</th>
                                 <th width="35">2da Nota</th>
                                 <th width="35">Total</th>
-                                <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -45,14 +41,7 @@
                                 <td style="background-color:red">N/A</td>
                                 @endif
                                 <td>{{ $student->total_note }}</td>
-                                <td>
-                                    <div class="btn-group" role="group">
-                                        <a href="" class="btn bg-purple waves-effect waves-light" data-toggle="modal" data-target="#studentModal-{{$student->id}}">Ver</a>
-                                        <button type="button" class="btn bg-purple waves-effect waves-light" data-toggle="modal" data-target="#studentEditModal-{{$student->id}}">Editar</button>
-                                        <button type="button" class="btn bg-purple waves-effect waves-light" data-toggle="modal" data-target="#studentAddNoteModal-{{$student->id}}">Agregar Notas</button>
-                                        <button type="button" class="btn bg-red waves-effect waves-light" data-toggle="modal" data-target="#deleteStudentModal-{{$student->id}}">Borrar</button>
-                                    </div>
-                                </td>
+
                             </tr>
     @include('students.modalstudents.profilestudent')
     @include('students.modalstudents.addnote')

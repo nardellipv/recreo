@@ -43,24 +43,13 @@
                             <a href="{{ url('/students')}}">Listado de alumnos</a>
                         </li>
                         <li>
+                            <a href="{{ url('approve')}}">Filtrar alumnos Aprobados</a>
+                        </li>
+                        <li>
                             <a href="{{ url('/teachers')}}">Listado de docentes</a>
                         </li>
                     </ul>
-                </li>
-                <li>
-                    <a href="javascript:void(0);" class="menu-toggle">
-                                <i class="material-icons">done_all</i>
-                                <span>Exámenes</span>
-                            </a>
-                    <ul class="ml-menu">
-                        <li>
-                            <a href="../../pages/charts/morris.html">Listado de alumnos aprobados</a>
-                        </li>
-                        <li>
-                            <a href="../../pages/charts/flot.html">Ingresar notas de exámenes</a>
-                        </li>
-                    </ul>
-                </li>
+                </li>                
                 <li>
                     <a href="{{ url('school') }}">
                                 <i class="material-icons">settings</i>
