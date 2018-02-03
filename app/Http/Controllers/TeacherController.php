@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use recreo\Http\Middleware\Profile;
+use recreo\Http\Requests\TeacherRequest;
 use recreo\Teacher;
 
 class TeacherController extends Controller
@@ -22,7 +23,7 @@ class TeacherController extends Controller
         $teachers = Teacher::where('school_id', '=', Auth::user()->school_id)
             ->get();
 
-        return view('lists.teachers.teacher', [
+        return view('teachers.lists.teacher', [
             'teachers' => $teachers,
         ]);
     }
@@ -34,7 +35,7 @@ class TeacherController extends Controller
      */
     public function create()
     {
-        //
+        return view('teachers.addteacher.teacher');
     }
 
     /**
@@ -43,9 +44,14 @@ class TeacherController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TeacherRequest $request)
     {
-        //
+        $teacher = new Teacher;
+        $teacher->school_id = Auth::user()->school_id;
+        $teacher->fill($request->all())->save();
+
+        Session::flash('message', 'Docente <b>' . $teacher->name . ' ' . $teacher->lastname . '</b> agregado correctamente');
+        return Redirect::to('addteacher/teacher');
     }
 
     /**
@@ -56,9 +62,7 @@ class TeacherController extends Controller
      */
     public function show(Teacher $id)
     {
-        $teacher = Teacher::findOrFail($id);
 
-        return view('teachers.profileteacher');
     }
 
     /**
@@ -90,7 +94,7 @@ class TeacherController extends Controller
             $teacher->fill($request->all())->save();
         }
 
-        Session::flash('message', 'Perfil editado correctamente');
+        Session::flash('message', 'Perfil <b>' . $teacher->name . ' ' . $teacher->lastname . '</b> editado correctamente');
         return Redirect::to('teachers');
     }
 

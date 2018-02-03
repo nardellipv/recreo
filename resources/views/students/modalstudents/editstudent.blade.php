@@ -29,7 +29,7 @@
                     <li>
                         Fecha Nacimiento
                         <span class="pull-right">
-                                    <input type="text" class="form-control" name="birth_date" value="{{ $student->birth_date }}" required />
+                                    <input type="date" class="form-control" name="birth_date" value="{{ $student->birth_date }}" required />
                                 </span>
                     </li>
                     <li>

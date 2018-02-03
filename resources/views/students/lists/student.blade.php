@@ -9,7 +9,11 @@
             <div class="header">
                 <h2>
                     Listado de alumnos
+                    <p class="header-dropdown">
+                        <a href="{{ url('addstudent/student') }}" class="btn bg-indigo waves-effect">agregar nuevo alumno</a>
+                    </p>
                 </h2>
+                
             </div>
             <div class="body">
                 <div class="table-responsive">
@@ -18,6 +22,7 @@
                             <tr>
                                 <th>Nombre</th>
                                 <th>Apellido</th>
+                                <th>Edad</th>
                                 <th>Nivel</th>
                                 <th>Año Cursado</th>
                                 <th width="200">Acciones</th>
@@ -28,6 +33,7 @@
                             <tr>
                                 <td>{{ $student->name }}</td>
                                 <td>{{ $student->lastname }} </td>
+                                <td>{{ Date::parse($student->birth_date)->age }} </td>
                                 <td>{{ $student->level }}</td>
                                 <td>{{ $student->classroom }}</td>
                                 <td>
@@ -38,9 +44,9 @@
                                     </div>
                                 </td>
                             </tr>
-    @include('modalstudents.profilestudent')
-    @include('modalstudents.deletestudent') 
-    @include('modalstudents.editstudent') 
+    @include('students.modalstudents.profilestudent')
+    @include('students.modalstudents.deletestudent') 
+    @include('students.modalstudents.editstudent') 
     @endforeach
                         </tbody>
                     </table>

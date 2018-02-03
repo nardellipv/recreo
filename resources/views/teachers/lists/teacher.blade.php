@@ -8,7 +8,10 @@
         <div class="card">
             <div class="header">
                 <h2>
-                    Listado de profesores
+                    Listado de docentes
+                    <p class="header-dropdown">
+                        <a href="{{ url('addteacher/teacher') }}" class="btn bg-indigo waves-effect">Agregar nuevo docente</a>
+                    </p>
                 </h2>
             </div>
             <div class="body">
@@ -38,9 +41,9 @@
                                     </div>
                                 </td>
                             </tr>
-    @include('modalteachers.profileteacher')
-    @include('modalteachers.editteacher')
-    @include('modalteachers.deleteteacher') 
+    @include('teachers.modalteachers.profileteacher')
+    @include('teachers.modalteachers.editteacher')
+    @include('teachers.modalteachers.deleteteacher') 
     @endforeach
                         </tbody>
                     </table>

@@ -6,23 +6,28 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
+use Jenssegers\Date\Date;
 use recreo\Http\Middleware\Profile;
+use recreo\Http\Requests\StudentRequest;
 use recreo\Student;
 
 class StudentController extends Controller
 {
     public function __construct()
     {
+
         $this->middleware('auth');
 
         $this->middleware(Profile::class);
+
+        Date::setLocale('es');
     }
     public function index()
     {
         $students = Student::where('school_id', '=', Auth::user()->school_id)
             ->get();
 
-        return view('lists.students.student', [
+        return view('students.lists.student', [
             'students' => $students,
         ]);
     }
@@ -34,7 +39,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view('students.addstudent.student');
     }
 
     /**
@@ -43,9 +48,14 @@ class StudentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StudentRequest $request)
     {
-        //
+        $student = new Student;
+        $student->school_id = Auth::user()->school_id;
+        $student->fill($request->all())->save();
+
+        Session::flash('message', 'Alumno <b>' . $student->name . ' ' . $student->lastname . '</b> agregado correctamente');
+        return Redirect::to('addstudent/student');
     }
 
     /**
@@ -56,11 +66,7 @@ class StudentController extends Controller
      */
     public function show(Student $id)
     {
-        $student = Student::findOrFail($id);
 
-        return view('students.profilestudent', [
-            'student' => $student,
-        ]);
     }
 
     /**
@@ -71,11 +77,6 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        /* $student = Student::find($id);
-
-    return view('students', [
-    'student' => $student,
-    ]); */
     }
 
     /**
@@ -95,7 +96,7 @@ class StudentController extends Controller
             $student->fill($request->all())->save();
         }
 
-        Session::flash('message', 'Perfil editado correctamente');
+        Session::flash('message', 'Perfil <b>' . $student->name . ' ' . $student->lastname . '</b> editado correctamente');
         return Redirect::to('students');
     }
 

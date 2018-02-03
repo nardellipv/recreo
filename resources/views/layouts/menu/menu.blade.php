@@ -26,10 +26,10 @@
                             </a>
                     <ul class="ml-menu">
                         <li>
-                            <a href="../../pages/charts/morris.html">Inscribir alumnos</a>
+                            <a href="{{ url('addstudent/student')}}">Inscribir alumnos</a>
                         </li>
                         <li>
-                            <a href="../../pages/charts/flot.html">Inscribir docentes</a>
+                            <a href="{{ url('addteacher/teacher')}}">Inscribir docentes</a>
                         </li>
                     </ul>
                 </li>
