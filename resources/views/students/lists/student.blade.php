@@ -10,7 +10,7 @@
                 <h2>
                     Listado de alumnos
                     <p class="header-dropdown">
-                        <a href="{{ url('addstudent/student') }}" class="btn bg-indigo waves-effect">agregar nuevo alumno</a>
+                        <a href="{{ url('addstudent/students') }}" class="btn bg-indigo waves-effect">agregar nuevo alumno</a>
                     </p>
                 </h2>
             </div>
@@ -49,7 +49,7 @@
                                     <div class="btn-group" role="group">
                                         <a href="" class="btn bg-purple waves-effect waves-light" data-toggle="modal" data-target="#studentModal-{{$student->id}}">Ver</a>
                                         <button type="button" class="btn bg-purple waves-effect waves-light" data-toggle="modal" data-target="#studentEditModal-{{$student->id}}">Editar</button>
-                                        <button type="button" class="btn bg-purple waves-effect waves-light" data-toggle="modal" data-target="#studentAddNoteModal-{{$student->id}}">Agregar Notas</button>
+                                        <button type="button" class="btn bg-purple waves-effect waves-light" data-toggle="modal" data-target="#studentAddNoteModal-{{$student->id}}" disabled>Agregar Notas</button>
                                         <button type="button" class="btn bg-red waves-effect waves-light" data-toggle="modal" data-target="#deleteStudentModal-{{$student->id}}">Borrar</button>
                                     </div>
                                 </td>

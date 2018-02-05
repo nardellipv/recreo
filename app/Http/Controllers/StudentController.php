@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Jenssegers\Date\Date;
+use recreo\Http\Middleware\Enable;
 use recreo\Http\Middleware\Profile;
 use recreo\Http\Requests\StudentRequest;
 use recreo\Student;
@@ -19,6 +20,8 @@ class StudentController extends Controller
         $this->middleware('auth');
 
         $this->middleware(Profile::class);
+
+        $this->middleware(Enable::class, ['only' => ['listApprove']]);
 
         Date::setLocale('es');
     }
@@ -78,15 +81,8 @@ class StudentController extends Controller
     public function edit($id)
     {
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \recreo\Student  $student
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    
+     public function update(Request $request, $id)
     {
         $student = Student::findOrFail($id);
 
@@ -100,7 +96,7 @@ class StudentController extends Controller
             $total = ($student->first_note + $request->second_note) / 2;
             $student->total_note = $total;
         }
-        
+
         //si manda solo la segunda nota
         if ($student->second_note) {
             $total = ($student->second_note + $request->first_note) / 2;
@@ -126,6 +122,7 @@ class StudentController extends Controller
 
     public function listApprove()
     {
+
         $students = Student::where('school_id', '=', Auth::user()->school_id)
             ->where('total_note', '>=', 60)
             ->get();

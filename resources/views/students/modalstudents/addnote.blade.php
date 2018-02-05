@@ -1,5 +1,6 @@
 <div class="modal fade in" id="studentAddNoteModal-{{$student->id}}" tabindex="-1" role="dialog">
-    {!! Form::model($student, ['method' => 'PATCH','route' => ['students.update', $student->id]]) !!} {{ csrf_field() }}
+    {!! Form::model($student, ['method' => 'PATCH','route' => ['students.update', $student->id]]) !!} 
+    {{ csrf_field() }}
     <div class="modal-dialog" role="document">
         <div class="modal-content modal-col-indigo">
             <div class="modal-header">

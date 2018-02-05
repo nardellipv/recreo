@@ -26,7 +26,7 @@
                             </a>
                     <ul class="ml-menu">
                         <li>
-                            <a href="{{ url('addstudent/student')}}">Inscribir alumnos</a>
+                            <a href="{{ url('addstudent/students')}}">Inscribir alumnos</a>
                         </li>
                         <li>
                             <a href="{{ url('addteacher/teacher')}}">Inscribir docentes</a>
@@ -43,7 +43,7 @@
                             <a href="{{ url('/students')}}">Listado de alumnos</a>
                         </li>
                         <li>
-                            <a href="{{ url('approve')}}">Filtrar alumnos Aprobados</a>
+                            <a href="{{ url('approve')}}" class="btn disabled">Filtrar alumnos Aprobados</a>
                         </li>
                         <li>
                             <a href="{{ url('/teachers')}}">Listado de docentes</a>
