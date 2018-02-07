@@ -58,7 +58,7 @@ class StudentController extends Controller
         $student->fill($request->all())->save();
 
         Session::flash('message', 'Alumno <b>' . $student->name . ' ' . $student->lastname . '</b> agregado correctamente');
-        return Redirect::to('addstudent/student');
+        return Redirect::to('addstudent/students');
     }
 
     /**
