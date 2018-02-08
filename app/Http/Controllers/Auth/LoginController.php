@@ -2,8 +2,8 @@
 
 namespace recreo\Http\Controllers\Auth;
 
-use recreo\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use recreo\Http\Controllers\Controller;
 
 class LoginController extends Controller
 {
@@ -16,7 +16,7 @@ class LoginController extends Controller
     | redirecting them to your home screen. The controller uses a trait
     | to conveniently provide its functionality to your applications.
     |
-    */
+     */
 
     use AuthenticatesUsers;
 
