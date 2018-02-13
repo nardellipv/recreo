@@ -42,12 +42,12 @@
                 </div>
             </div>
             <div class="row m-t-15 m-b--20">
-                <div class="col-xs-6">
-                    <a href="{{ route('register')}}" class="btn bg-indigo waves-effect">Registar un nuevo colegio</a>
+                <div class="col-lg-12">
+                    <a href="{{ route('register')}}" class="btn btn-block btn-lg bg-indigo waves-effect">Registar un nuevo colegio</a>
                 </div>
-                <div class="col-xs-6 align-right">
+                {{--  <div class="col-xs-6 align-right">
                     <a href="{{ route('password.request') }}" class="btn bg-red waves-effect">Olvide mi Contraseña</a>
-                </div>
+                </div>  --}}
             </div>
         </div>
     </div>
