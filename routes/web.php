@@ -30,3 +30,9 @@ Route::get('/approve', 'StudentController@listApprove')->name('approve');
 
 Route::resource('/teachers', 'TeacherController');
 Route::get('addteacher/teacher', 'TeacherController@create');
+
+Route::get('email', function () {
+    Mail::raw('Sending emails with Mailgun and Laravel is easy!', function ($message) {
+        $message->to('johndoe@gmail.com');
+    });
+});
