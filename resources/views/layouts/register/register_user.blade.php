@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div class="input-group">
-                    <select name="city" class="form-control show-tick">
+                    <select name="city" class="form-control show-tick" required>
                                     <option value="">-- Seleccione su Provincia --</option>                                    
                                     <option value="2">CIUDAD AUTÓNOMA DE BUENOS AIRES</option>                                    
                                     <option value="6">BUENOS AIRES</option>

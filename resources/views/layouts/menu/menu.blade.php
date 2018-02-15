@@ -43,7 +43,7 @@
                             <a href="{{ url('/students')}}">Listado de alumnos</a>
                         </li>
                         <li>
-                            <a href="{{ url('approve')}}" class="btn disabled">Filtrar alumnos Aprobados</a>
+                            <a href="{{ url('approve')}}">Filtrar alumnos Aprobados</a>
                         </li>
                         <li>
                             <a href="{{ url('/teachers')}}">Listado de docentes</a>
