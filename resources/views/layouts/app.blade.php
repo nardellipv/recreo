@@ -17,7 +17,7 @@
     <!-- Animation Css -->
     <link href="{{ asset('plugins/animate-css/animate.css') }}" rel="stylesheet" />
     <!-- Custom Css -->
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">    
 </head>
 <body class="login-page">
     <div id="app">

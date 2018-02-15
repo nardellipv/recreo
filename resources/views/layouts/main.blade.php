@@ -22,6 +22,7 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="{{ asset('css/theme/all-themes.css') }}" rel="stylesheet" />
+    <script src="//code.tidio.co/fzkgsfofwstlz9ri8zxhexspdiktikwp.js"></script>
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
     <script>
         var OneSignal = window.OneSignal || [];
