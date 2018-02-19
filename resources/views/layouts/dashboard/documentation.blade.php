@@ -1,4 +1,4 @@
-<div class="card">
+<div class="tour-step 8 card">
     <div class="header">
         <h2>
             Área de información y descargas

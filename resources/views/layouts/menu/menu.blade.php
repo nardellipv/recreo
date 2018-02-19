@@ -12,14 +12,14 @@
         <!-- Menu -->
         <div class="menu">
             <ul class="list">
-                <li class="header">Menú</li>
-                <li class="active">
+                <li class="tour-step 1 header">Menú</li>
+                <li class="tour-step 2 active">
                     <a href="{{ route('home') }}">
                             <i class="material-icons">home</i>
                             <span>Panel Pricipal</span>
                         </a>
                 </li>
-                <li>
+                <li class="tour-step 3">
                     <a href="javascript:void(0);" class="menu-toggle">
                                 <i class="material-icons">person_add</i>
                                 <span>Inscripciones</span>
@@ -33,7 +33,7 @@
                         </li>
                     </ul>
                 </li>
-                <li>
+                <li class="tour-step 4">
                     <a href="javascript:void(0);" class="menu-toggle">
                                 <i class="material-icons">list</i>
                                 <span>Listados</span>
@@ -50,13 +50,13 @@
                         </li>
                     </ul>
                 </li>                
-                <li>
+                <li class="tour-step 5">
                     <a href="{{ url('school') }}">
                                 <i class="material-icons">settings</i>
                                 <span>Perfíl del colegio</span>
                             </a>
                 </li>
-                <li>
+                <li class="tour-step 6">
                     <a href="{{ route('faq') }}">
                                 <i class="material-icons">help</i>
                                 <span>Preguntas frecuentes</span>

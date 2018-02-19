@@ -20,9 +20,9 @@
     <link href="{{ asset('plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css') }}" rel="stylesheet">
     <!-- Custom Css -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap-tour.min.css') }}" rel="stylesheet">
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
-    <link href="{{ asset('css/theme/all-themes.css') }}" rel="stylesheet" />
-    <script src="//code.tidio.co/fzkgsfofwstlz9ri8zxhexspdiktikwp.js"></script>
+    <link href="{{ asset('css/theme/all-themes.css') }}" rel="stylesheet" />    
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
     <script>
         var OneSignal = window.OneSignal || [];
@@ -63,8 +63,9 @@
     @include('layouts.menu.menu')
     <section class="content">
         <div class="container-fluid">
-            <div class="block-header">
+            <div class="block-header">                    
                 @yield('content')
+                
             </div>
         </div>
     </section>
@@ -93,5 +94,9 @@
     <script src="{{ asset('js/pages/tables/jquery-datatable.js') }}"></script>
     <!-- Demo Js -->
     <script src="{{ asset('js/demo.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-tour.min.js') }}"></script>
+    @if(Auth::user()->remember_token == null)
+    <script src="{{ asset('js/tour.js') }}"></script>
+    @endif
 </body>
 </html>
