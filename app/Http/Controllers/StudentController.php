@@ -53,6 +53,7 @@ class StudentController extends Controller
      */
     public function store(StudentRequest $request)
     {
+
         $student = new Student;
         $student->school_id = Auth::user()->school_id;
         $student->fill($request->all())->save();

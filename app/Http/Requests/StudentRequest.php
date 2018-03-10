@@ -29,7 +29,7 @@ class StudentRequest extends FormRequest
             'dni' => 'required|numeric',
             'birth_date' => 'required|date',
             'phone' => 'required|numeric',
-            'classroom' => 'required|numeric',
+            'classroom' => 'required',
             'level' => 'required|numeric',
             'first_time' => 'required|max:10',
         ];

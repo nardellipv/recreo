@@ -16,7 +16,7 @@
                 <i class="material-icons">mood</i>
             </div>
             <div class="content">
-                <div class="text">Cantidad de niños</div>
+                <div class="text">Cantidad de estudiantes</div>
                 <div class="number count-to" data-from="0" data-to="257" data-speed="1000" data-fresh-interval="20">{{ $studentsCount }}</div>
             </div>
         </div>
@@ -27,7 +27,7 @@
                 <i class="material-icons">face</i>
             </div>
             <div class="content">
-                <div class="text">Niños nivel 1</div>
+                <div class="text">Estudiantes nivel 1</div>
                 <div class="number count-to" data-from="0" data-to="257" data-speed="1000" data-fresh-interval="20">{{ $studentsCountLeve1 }}</div>
             </div>
         </div>
@@ -38,7 +38,7 @@
                 <i class="material-icons">face</i>
             </div>
             <div class="content">
-                <div class="text">Niños nivel 2</div>
+                <div class="text">Estudiantes nivel 2</div>
                 <div class="number count-to" data-from="0" data-to="257" data-speed="1000" data-fresh-interval="20">{{ $studentsCountLeve2 }}</div>
             </div>
         </div>

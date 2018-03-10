@@ -19,7 +19,7 @@ class CreateTeachersTable extends Migration
             $table->string('lastname');
             $table->string('dni');
             $table->string('space');
-            $table->enum('level', ['1', '2']);
+            $table->enum('level', ['1', '2', '3']);
             $table->string('phone');
             $table->string('email', 160)->unique();
             $table->enum('first_time', ['SI', 'NO']);

@@ -18,6 +18,7 @@ class TeacherController extends Controller
 
         $this->middleware(Profile::class);
     }
+
     public function index()
     {
         $teachers = Teacher::where('school_id', '=', Auth::user()->school_id)
@@ -41,7 +42,7 @@ class TeacherController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(TeacherRequest $request)
@@ -57,7 +58,7 @@ class TeacherController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \recreo\Teacher  $teacher
+     * @param  \recreo\Teacher $teacher
      * @return \Illuminate\Http\Response
      */
     public function show(Teacher $id)
@@ -68,7 +69,7 @@ class TeacherController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \recreo\Teacher  $teacher
+     * @param  \recreo\Teacher $teacher
      * @return \Illuminate\Http\Response
      */
     public function edit(Teacher $teacher)
@@ -79,13 +80,12 @@ class TeacherController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \recreo\Teacher  $teacher
+     * @param  \Illuminate\Http\Request $request
+     * @param  \recreo\Teacher $teacher
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-
         $teacher = Teacher::findOrFail($id);
         if ($request->first_time == 'SI') {
             $teacher->fill($request->all())->save();
@@ -101,7 +101,7 @@ class TeacherController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \recreo\Teacher  $teacher
+     * @param  \recreo\Teacher $teacher
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
