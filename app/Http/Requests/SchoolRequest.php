@@ -32,6 +32,7 @@ class SchoolRequest extends FormRequest
             'director1' => 'required',
             'director2' => 'required',
             'first_time' => 'required',
+            'sede' => 'required',
         ];
     }
 }

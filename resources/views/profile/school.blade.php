@@ -39,7 +39,7 @@
                                 <div class="form-group">
                                     <div class="form-line">
                                         <input type="text" class="form-control" name="name"
-                                               value="{{ $school->nameSchool }}" placeholder="Nombre de la Escuela"
+                                               value="{{ $school->nameSchool }}" placeholder="Nombre completo de la Escuela"
                                                required/>
                                     </div>
                                 </div>
@@ -89,8 +89,6 @@
                                             @endforeach
                                         </select> @endif
                                 </div>
-                            </div>
-                            <div class="col-sm-6">
                                 <div class="form-group">
                                     <div class="form-line">
                                         <input type="text" class="form-control" name="director1"
@@ -98,6 +96,9 @@
                                                required/>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-sm-6">
+
                                 <div class="form-group">
                                     <div class="form-line">
                                         <input type="text" class="form-control" name="director2"
@@ -145,6 +146,25 @@
                                         <input name="first_time" type="radio" id="first_2" value="NO"
                                                class="radio-col-purple" checked/>
                                         <label for="first_2">Ya ha participado con anterioridad</label> @endif
+                                </div>
+                                <br/><br/>
+                                <span>Postularse para ser Sede</span>
+                                <div class="demo-radio-button">
+                                    @if($school->sede == 'SI')
+                                        <input name="sede" type="radio" value="SI" id="sede"
+                                               class="radio-col-purple" checked/>
+                                        <label for="sede">Si</label>
+                                        <input name="sede" type="radio" id="sede2" value="NO"
+                                               class="radio-col-purple"/>
+                                        <label for="sede2">No</label>
+                                    @else
+                                        <input name="sede" type="radio" value="SI" id="sede"
+                                               class="radio-col-purple"/>
+                                        <label for="sede">Si</label>
+                                        <input name="sede" type="radio" id="sede2" value="NO"
+                                               class="radio-col-purple" checked/>
+                                        <label for="sede2">No</label>
+                                    @endif
                                 </div>
                             </div>
                         </div>

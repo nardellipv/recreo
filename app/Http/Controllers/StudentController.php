@@ -94,19 +94,19 @@ class StudentController extends Controller
 
         //si manda solo la primera nota
         if ($student->first_note) {
-            $total = ($student->first_note + $request->second_note) / 2;
+            $total = $student->first_note + $request->second_note;
             $student->total_note = $total;
         }
 
         //si manda solo la segunda nota
         if ($student->second_note) {
-            $total = ($student->second_note + $request->first_note) / 2;
+            $total = $student->second_note + $request->first_note;
             $student->total_note = $total;
         }
 
         //si manda las 2 notas al mismo tiempo
         if ($request->first_note and $request->second_note) {
-            $total = ($request->second_note + $request->first_note) / 2;
+            $total = $request->second_note + $request->first_note;
             $student->total_note = $total;
         }
 

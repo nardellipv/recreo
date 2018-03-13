@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Session;
 use recreo\Http\Requests\SchoolRequest;
 use recreo\Location;
 use recreo\School;
-use recreo\User;
+
 
 class SchoolController extends Controller
 {
@@ -22,7 +22,7 @@ class SchoolController extends Controller
     {
         $school = School::where('schools.id', '=', Auth::user()->school_id)
             ->select('schools.id as schoolId', 'schools.name as nameSchool', 'schools.address', 'schools.postal_code', 'schools.phone',
-                'schools.type', 'schools.director1', 'schools.director2', 'schools.email', 'schools.first_time',
+                'schools.type', 'schools.director1', 'schools.director2', 'schools.email', 'schools.first_time', 'schools.sede',
                 'schools.city_id', 'schools.location_id', 'cities.id', 'cities.name as nameCity')
             ->join('cities', 'schools.city_id', '=', 'cities.id')
             ->first();

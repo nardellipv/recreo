@@ -95,7 +95,8 @@
     <!-- Demo Js -->
     <script src="{{ asset('js/demo.js') }}"></script>
     <script src="{{ asset('js/bootstrap-tour.min.js') }}"></script>
-    @if(Auth::user()->remember_token == null)
+    {{--@if(Auth::user()->remember_token == null)--}}
+    @if(Route::current()->getName() == 'home' && Auth::user()->remember_token == null)
     <script src="{{ asset('js/tour.js') }}"></script>
     @endif
 </body>

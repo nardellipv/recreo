@@ -25,6 +25,7 @@ class CreateSchoolsTable extends Migration
             $table->string('email', 160)->unique();
             $table->enum('first_time', ['SI', 'NO']);
             $table->enum('active', ['SI', 'NO'])->default('NO');
+            $table->enum('sede', ['SI', 'NO'])->default('NO');
 
             $table->integer('city_id')->unsigned();
             $table->integer('location_id')->unsigned();
