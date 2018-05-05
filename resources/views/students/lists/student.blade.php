@@ -50,13 +50,11 @@
                                         <div class="btn-group" role="group">
                                             <a href="" class="btn bg-purple waves-effect waves-light"
                                                data-toggle="modal" data-target="#studentModal-{{$student->id}}">Ver</a>
+                                            <a href="{{route ('students.edit', $student->id)}}" class="btn bg-purple">Editar
+                                            </a>
                                             <button type="button" class="btn bg-purple waves-effect waves-light"
                                                     data-toggle="modal"
-                                                    data-target="#studentEditModal-{{$student->id}}">Editar
-                                            </button>
-                                            <button type="button" class="btn bg-purple waves-effect waves-light"
-                                                    data-toggle="modal"
-                                                    data-target="#studentAddNoteModal-{{$student->id}}">Agregar Notas
+                                                    data-target="#studentAddNoteModal-{{$student->id}}" disabled>Agregar Notas
                                             </button>
                                             <button type="button" class="btn bg-red waves-effect waves-light"
                                                     data-toggle="modal"

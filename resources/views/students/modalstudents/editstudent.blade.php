@@ -1,5 +1,5 @@
 <div class="modal fade in" id="studentEditModal-{{$student->id}}" tabindex="-1" role="dialog">
-    {!! Form::model($student, ['method' => 'PATCH','route' => ['students.update', $student->id]]) !!} 
+    {!! Form::model($student, ['method' => 'PATCH','route' => ['students.update', $student->id]]) !!}
     {{ csrf_field() }}
     <div class="modal-dialog" role="document">
         <div class="modal-content modal-col-indigo">
@@ -17,7 +17,7 @@
                     <li>
                         Apellido
                         <span class="pull-right">
-                            <input type="text" class="form-control" name="lastname" value="{{ $student->lastname }}" required /> 
+                            <input type="text" class="form-control" name="lastname" value="{{ $student->lastname }}" required />
                         </span>
                     </li>
                     <li>
@@ -45,14 +45,14 @@
                                 </span>
                     </li>
                     <li>
-                        Nivel
+                        Nivel <span>(1,2 y 3 secundario - 4to a 9no primario)</span>
                         <span class="pull-right">
-                                        <span class="pull-right"><input type="number" min="1" max="2" class="form-control" name="level" value="{{ $student->level }}" required />                                        
+                                        <span class="pull-right"><input type="number" min="1" max="2" class="form-control" name="level" value="{{ $student->level }}" required />
                                 </span>
                         </span>
                     </li>
                     <li>
-                        Paricipa por primera vez 
+                        Paricipa por primera vez
                             <span class="pull-right">
                                 @if($student->first_time == 'SI')
                                     <div class="switch">
@@ -70,8 +70,8 @@
                                         </label>
                                         <label>SI</label>
                                     </div>
-                                @endif    
-                                    </li>  
+                                @endif
+                                    </li>
                             </span>
                 </ul>
             </div>

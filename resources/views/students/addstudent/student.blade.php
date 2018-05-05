@@ -63,19 +63,20 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        {{--<input type="number" min="1" max="9" class="form-control" value="{{ old('classroom') }}" name="classroom" placeholder="Curso" required />--}}
                                         <select name="classroom"
                                                  class="form-control show-tick" required>
                                             <option value="">-- Seleccione el nivel del alumno --</option>
-                                            <option value="4">4to primaria</option>
-                                            <option value="5">5to primaria</option>
-                                            <option value="6">6to primaria</option>
-                                            <option value="7">7mo primaria</option>
-                                            <option value="8">8vo primaria</option>
-                                            <option value="9">9no primaria</option>
-                                            <option value="1">1ro secundario</option>
-                                            <option value="2">2do secundario</option>
-                                            <option value="3">3ro secundario</option>
+                                            <option value="4 primaria">4to primaria</option>
+                                            <option value="5 primaria">5to primaria</option>
+                                            <option value="6 primaria">6to primaria</option>
+                                            <option value="7 primaria">7mo primaria</option>
+                                            <option value="8 primaria">8vo primaria</option>
+                                            <option value="9 primaria">9no primaria</option>
+                                            <option value="1 secundaria">1ro secundario</option>
+                                            <option value="2 secundaria">2do secundario</option>
+                                            <option value="3 secundaria">3ro secundario</option>
+                                            <option value="4 secundaria">4to secundario</option>
+                                            <option value="5 secundaria">5to secundario</option>
                                         </select>
                                     </div>
                                 </div>
