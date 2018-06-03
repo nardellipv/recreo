@@ -41,7 +41,7 @@
                                     @if($student->second_note)
                                     <p>{{ $student->second_note }} puntos</p>
                                     @else
-                                    <input type="number" min="0" max="40" class="form-control" name="second_note" value="{{ $student->second_note }}" />
+                                    <input type="number" min="0" max="40" class="form-control" name="second_note" value="{{ $student->second_note }}" disabled="disabled" />
                                     @endif
                             </span>
                     </li>

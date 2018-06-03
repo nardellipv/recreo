@@ -54,7 +54,7 @@
                                             </a>
                                             <button type="button" class="btn bg-purple waves-effect waves-light"
                                                     data-toggle="modal"
-                                                    data-target="#studentAddNoteModal-{{$student->id}}" disabled>Agregar Notas
+                                                    data-target="#studentAddNoteModal-{{$student->id}}">Agregar Notas
                                             </button>
                                             <button type="button" class="btn bg-red waves-effect waves-light"
                                                     data-toggle="modal"
