@@ -24,12 +24,14 @@
                                 <i class="material-icons">person_add</i>
                                 <span>Inscripciones</span>
                             </a>
-                    <ul class="ml-menu">
+                    <ul class="ml-menu disabled">
                         <li>
-                            <a href="{{ url('addstudent/students')}}">Inscribir alumnos</a>
+{{--                            <a href="{{ url('addstudent/students')}}">Inscribir alumnos</a>--}}
+                            <a href="#">Inscribir alumnos</a>
                         </li>
                         <li>
-                            <a href="{{ url('addteacher/teacher')}}">Inscribir docentes</a>
+{{--                            <a href="{{ url('addteacher/teacher')}}">Inscribir docentes</a>--}}
+                            <a href="#">Inscribir docentes</a>
                         </li>
                     </ul>
                 </li>

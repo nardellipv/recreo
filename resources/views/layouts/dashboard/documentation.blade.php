@@ -36,6 +36,20 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="card">
+                        <div class="header bg-light-blue">
+                            <h2>
+                                Subir el exámen
+                                <small>Exámen modelo</small>
+                            </h2>
+                        </div>
+                        <div class="body">
+                            Por favor suba el exámen modelo que se tomó a los alumnos en formato <b>PDF</b>.
+                            Para subirlo haga click en el siguiente link <a href="{{ url('showUploadFile') }}">Subir PDF</a>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>

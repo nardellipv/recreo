@@ -10,7 +10,7 @@
                     <h2>
                         Listado de alumnos
                         <p class="header-dropdown">
-                            <a href="{{ url('addstudent/students') }}" class="btn bg-indigo waves-effect">agregar nuevo
+                            <a href="{{ url('addstudent/students') }}" class="btn bg-indigo waves-effect disabled">agregar nuevo
                                 alumno</a>
                         </p>
                     </h2>

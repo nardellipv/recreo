@@ -19,6 +19,7 @@
     <!-- JQuery DataTable Css -->
     <link href="{{ asset('plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css') }}" rel="stylesheet">
     <!-- Custom Css -->
+    @yield('style')
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap-tour.min.css') }}" rel="stylesheet">
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
@@ -95,6 +96,7 @@
     <!-- Demo Js -->
     <script src="{{ asset('js/demo.js') }}"></script>
     <script src="{{ asset('js/bootstrap-tour.min.js') }}"></script>
+    @yield('script')
     {{--@if(Auth::user()->remember_token == null)--}}
     @if(Route::current()->getName() == 'home' && Auth::user()->remember_token == null)
     <script src="{{ asset('js/tour.js') }}"></script>

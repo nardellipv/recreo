@@ -23,7 +23,7 @@
                             <span class="pull-right"><p>{{ $student->level }}</p>                                
                     </li>
                     <li>
-                        Primera Examen (de 0 a 60 puntos)
+                        Primera Teórico (de 0 a 60 puntos)
                         <span class="pull-right">
                             <span class="pull-right">
                                 @if($student->first_note)
@@ -35,13 +35,13 @@
                     </li>
                     @if($student->level == 2)
                     <li>
-                        Segunda Examen (de 0 a 40 puntos)
+                        Segunda Práctico (de 0 a 40 puntos)
                         <span class="pull-right">
                             <span class="pull-right">
                                     @if($student->second_note)
                                     <p>{{ $student->second_note }} puntos</p>
                                     @else
-                                    <input type="number" min="0" max="40" class="form-control" name="second_note" value="{{ $student->second_note }}" disabled="disabled" />
+                                    <input type="number" min="0" max="40" class="form-control" name="second_note" value="{{ $student->second_note }}" />
                                     @endif
                             </span>
                     </li>

@@ -35,22 +35,12 @@ class StudentController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('students.addstudent.student');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(StudentRequest $request)
     {
 
@@ -62,23 +52,6 @@ class StudentController extends Controller
         return Redirect::to('addstudent/students');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \recreo\Student  $student
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Student $id)
-    {
-
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \recreo\Student  $student
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $student = Student::findOrFail($id);
@@ -136,12 +109,6 @@ class StudentController extends Controller
         ]);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \recreo\Student  $student
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         $student = Student::findOrFail($id);

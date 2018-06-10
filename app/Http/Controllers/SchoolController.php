@@ -4,6 +4,7 @@ namespace recreo\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use recreo\Http\Requests\SchoolRequest;
@@ -44,33 +45,6 @@ class SchoolController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \recreo\School  $school
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         $school = School::findOrFail($id);
@@ -80,28 +54,7 @@ class SchoolController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \recreo\School  $school
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        /* $school = School::find($id);
 
-    return view('school', [
-    'school' => $school,
-    ]); */
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \recreo\School  $school
-     * @return \Illuminate\Http\Response
-     */
     public function update(SchoolRequest $request, $id)
     {
         $school = School::find($id);
@@ -112,14 +65,30 @@ class SchoolController extends Controller
         return Redirect::to('school');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \recreo\School  $school
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(School $school)
+    public function showUploadFile()
     {
-        //
+        return view('students.exam.upload');
     }
+
+    public function UploadFile(Request $request)
+    {
+        $school = School::where('id', Auth::user()->id)
+            ->first();
+        $extension = $request->file->getClientOriginalExtension();
+
+        if ($request->hasFile('file') && $extension == 'pdf') {
+            //crear link simbolico en cpanel
+            //ln -s /home/pablon/mikant/storage /home/pablon/public_html/storage
+
+            request()->file->storeAs('exam/'.$school->name, request()->file->getClientOriginalName());
+//            $cookie = Cookie::make('fileupdate', 'yes');
+        } else {
+            Session::flash('error', 'El formato aceptado solo es PDF.');
+            return back();
+        }
+
+        Session::flash('message', 'Exámen subido correctamente');
+        return back();
+    }
+
 }

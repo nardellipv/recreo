@@ -23,6 +23,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/school', 'SchoolController');
+Route::get('showUploadFile', 'SchoolController@showUploadFile')->name('showUploadFile');
+Route::post('uploadFile', 'SchoolController@uploadFile')->name('uploadFile');
 
 Route::resource('/students', 'StudentController');
 Route::get('addstudent/students', 'StudentController@create');
