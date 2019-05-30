@@ -55,35 +55,6 @@ class TeacherController extends Controller
         return Redirect::to('addteacher/teacher');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \recreo\Teacher $teacher
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Teacher $id)
-    {
-
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \recreo\Teacher $teacher
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Teacher $teacher)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  \recreo\Teacher $teacher
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $teacher = Teacher::findOrFail($id);
@@ -98,12 +69,6 @@ class TeacherController extends Controller
         return Redirect::to('teachers');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \recreo\Teacher $teacher
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         $teacher = Teacher::findOrFail($id);

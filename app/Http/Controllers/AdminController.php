@@ -5,6 +5,7 @@ namespace recreo\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
+use recreo\Student;
 use recreo\User;
 
 class AdminController extends Controller
@@ -36,8 +37,6 @@ class AdminController extends Controller
         return Redirect::to('admin/admin');
 
     }
-    public function edit($id)
-    {
 
-    }
+
 }

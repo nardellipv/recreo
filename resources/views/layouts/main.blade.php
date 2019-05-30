@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Olimpiadas Ciencia 2018</title>
+    <title>Olimpiadas Ciencia 2019</title>
     <!-- Favicon-->
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
     <!-- Google Fonts -->
@@ -98,8 +98,8 @@
     <script src="{{ asset('js/bootstrap-tour.min.js') }}"></script>
     @yield('script')
     {{--@if(Auth::user()->remember_token == null)--}}
-    @if(Route::current()->getName() == 'home' && Auth::user()->remember_token == null)
+{{--    @if(Route::current()->getName() == 'home' && Auth::user()->remember_token == null)
     <script src="{{ asset('js/tour.js') }}"></script>
-    @endif
+    @endif--}}
 </body>
 </html>

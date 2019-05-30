@@ -27,9 +27,8 @@ class TeacherRequest extends FormRequest
             'name' => 'required|max:100',
             'lastname' => 'required|max:100',
             'dni' => 'required|numeric',
-            'lastname' => 'required|max:255',
             'phone' => 'required|numeric',
-            'email' => 'required|max:150',
+            'email' => 'required|max:150|email|unique:users',
             'level' => 'required|numeric',
             'first_time' => 'required|max:10',
         ];

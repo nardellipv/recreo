@@ -33,4 +33,6 @@ Route::get('/approve', 'StudentController@listApprove')->name('approve');
 Route::resource('/teachers', 'TeacherController');
 Route::get('addteacher/teacher', 'TeacherController@create');
 
+//admin
 Route::resource('/admin/admin', 'AdminController');
+Route::resource('/admin/adminstudent', 'AdminStudentController');

@@ -70,27 +70,25 @@
                                                required/>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        {{--<input type="number" min="1" max="9" class="form-control" value="{{ old('classroom') }}" name="classroom" placeholder="Curso" required />--}}
-                                        <select name="classroom"
-                                                class="form-control show-tick" required>
-                                            <option value="{{ $student->classroom }}">{{ $student->classroom }}</option>
-                                            <option value="">-- Seleccione el nivel del alumno --</option>
-                                            <option value="4 primaria">4to primaria</option>
-                                            <option value="5 primaria">5to primaria</option>
-                                            <option value="6 primaria">6to primaria</option>
-                                            <option value="7 primaria">7mo primaria</option>
-                                            <option value="8 primaria">8vo primaria</option>
-                                            <option value="9 primaria">9no primaria</option>
-                                            <option value="1 secundaria">1ro secundario</option>
-                                            <option value="2 secundaria">2do secundario</option>
-                                            <option value="3 secundaria">3ro secundario</option>
-                                            <option value="4 secundaria">4to secundario</option>
-                                            <option value="5 secundaria">5to secundario</option>
-                                        </select>
+                                @if($student->classroom == 'primaria')
+                                    <div class="form-group" required>
+                                        <input name="classroom" type="radio" value="primaria" id="nivel1"
+                                               class="radio-col-purple" checked/>
+                                        <label for="nivel1">Primaria</label>
+                                        <input name="classroom" type="radio" id="nivel2" value="secundaria"
+                                               class="radio-col-purple"/>
+                                        <label for="nivel2">Secundaria</label>
                                     </div>
-                                </div>
+                                @else
+                                    <div class="form-group" required>
+                                        <input name="classroom" type="radio" value="primaria" id="nivel1"
+                                               class="radio-col-purple" />
+                                        <label for="nivel1">Primaria</label>
+                                        <input name="classroom" type="radio" id="nivel2" value="secundaria"
+                                               class="radio-col-purple" checked/>
+                                        <label for="nivel2">Secundaria</label>
+                                    </div>
+                                @endif
                                 <div class="form-group" required>
                                     @if($student->level == 1)
                                         <input name="level" type="radio" value="1" id="level1" class="radio-col-purple"
@@ -111,7 +109,7 @@
                                 <div class="form-group" required>
                                     @if($student->first_time == 'SI')
                                         <input name="first_time" type="radio" value="SI" id="first_1"
-                                               class="radio-col-purple" checked />
+                                               class="radio-col-purple" checked/>
                                         <label for="first_1">Participa por primera vez</label>
                                         <input name="first_time" type="radio" id="first_2" value="NO"
                                                class="radio-col-purple"/>

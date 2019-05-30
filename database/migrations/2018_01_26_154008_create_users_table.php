@@ -29,7 +29,7 @@ class CreateUsersTable extends Migration
 
             $table->foreign('school_id')->references('id')->on('schools')
                 ->onUpdate('cascade')
-                ->onDelete('cascade');;
+                ->onDelete('cascade');
         });
     }
 

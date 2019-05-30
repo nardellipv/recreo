@@ -31,6 +31,7 @@ class StudentRequest extends FormRequest
             'phone' => 'required|numeric',
             'classroom' => 'required',
             'level' => 'required|numeric',
+            'genero' => 'required',
             'first_time' => 'required|max:10',
         ];
     }

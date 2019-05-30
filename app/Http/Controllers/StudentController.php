@@ -65,26 +65,38 @@ class StudentController extends Controller
 
         if ($student->level == 1) {
             $total = $request->first_note;
+            $student->first_note = $total;
             $student->total_note = $total;
+            $student->save();
+
+            Session::flash('message', 'Perfil <b>' . $student->name . ' ' . $student->lastname . '</b> editado correctamente');
+            return Redirect::to('students');
         }
 
+        $total = $request->second_note + $request->first_note;
+        $student->total_note = $total;
+        $student->save();
+
+        /*//si manda las 2 notas al mismo tiempo
+        if ($request->first_note and $request->second_note) {
+            dd('las 2 notas');
+            $total = $request->second_note + $request->first_note;
+            $student->total_note = $total;
+        }
         //si manda solo la primera nota
         if ($student->first_note) {
+            dd('priera nota');
             $total = $student->first_note + $request->second_note;
             $student->total_note = $total;
         }
 
         //si manda solo la segunda nota
         if ($student->second_note) {
+            dd('segunda nota');
             $total = $student->second_note + $request->first_note;
             $student->total_note = $total;
-        }
+        }*/
 
-        //si manda las 2 notas al mismo tiempo
-        if ($request->first_note and $request->second_note) {
-            $total = $request->second_note + $request->first_note;
-            $student->total_note = $total;
-        }
 
         if ($request->first_time == 'SI') {
             $student->fill($request->all())->save();
