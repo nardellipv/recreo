@@ -171,7 +171,7 @@ return [
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         Jenssegers\Date\DateServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
-
+        recreo\Providers\ComposerServiceProvider::class,
         /*
          * Application Service Providers...
          */

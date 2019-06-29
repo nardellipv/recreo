@@ -33,6 +33,11 @@ Route::get('/approve', 'StudentController@listApprove')->name('approve');
 Route::resource('/teachers', 'TeacherController');
 Route::get('addteacher/teacher', 'TeacherController@create');
 
+Route::post('/access/permition', 'AccessTestController@permition')->name('access.permition');
+Route::get('/access', 'AccessTestController@index')->name('access.index');
+Route::get('/access/download', 'AccessTestController@download')->name('access.download');
+
+
 //admin
 Route::resource('/admin/admin', 'AdminController');
 Route::resource('/admin/adminstudent', 'AdminStudentController');

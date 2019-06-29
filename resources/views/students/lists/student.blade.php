@@ -10,7 +10,10 @@
                     <h2>
                         Listado de alumnos
                         <p class="header-dropdown">
-                            <a href="{{ url('addstudent/students') }}" class="btn bg-indigo waves-effect">agregar
+                            {{--<a href="{{ url('addstudent/students') }}" class="btn bg-indigo waves-effect">agregar
+                                nuevo
+                                alumno</a>--}}
+                            <a href="#" class="btn bg-indigo waves-effect">agregar
                                 nuevo
                                 alumno</a>
                         </p>
@@ -53,19 +56,19 @@
                                                data-toggle="modal" data-target="#studentModal-{{$student->id}}">Ver</a>
                                             <a href="{{route ('students.edit', $student->id)}}" class="btn bg-purple">Editar
                                             </a>
-                                            @if($student->level == 2)
+                                           {{-- @if($student->level == 2)
                                                 <button type="button" class="btn bg-purple waves-effect waves-light"
                                                         data-toggle="modal"
-                                                        data-target="#studentAddNoteModal-{{$student->id}}" disabled>Agregar
+                                                        data-target="#studentAddNoteModal-{{$student->id}}" >Agregar
                                                     Notas
                                                 </button>
                                             @else
                                                 <button type="button" class="btn bg-purple waves-effect waves-light"
                                                         data-toggle="modal"
-                                                        data-target="#studentAddNoteLevel1Modal-{{$student->id}}" disabled>Agregar
+                                                        data-target="#studentAddNoteLevel1Modal-{{$student->id}}" >Agregar
                                                     Notas
                                                 </button>
-                                            @endif
+                                            @endif--}}
                                             <button type="button" class="btn bg-red waves-effect waves-light"
                                                     data-toggle="modal"
                                                     data-target="#deleteStudentModal-{{$student->id}}">Borrar
