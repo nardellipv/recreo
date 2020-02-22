@@ -10,11 +10,11 @@
                     <h2>
                         Listado de docentes
                         <p class="header-dropdown">
-                            {{--<a href="{{ url('addteacher/teacher') }}" class="btn bg-indigo waves-effect disabled">Agregar
+                            <a href="{{ url('addteacher/teacher') }}" class="btn bg-indigo waves-effect disabled">Agregar
                                 nuevo
-                                docente</a>--}}
-                            <a href="#" class="btn bg-indigo waves-effect disabled">Agregar nuevo
                                 docente</a>
+                            {{--<a href="#" class="btn bg-indigo waves-effect disabled">Agregar nuevo
+                                docente</a>--}}
                         </p>
                     </h2>
                 </div>

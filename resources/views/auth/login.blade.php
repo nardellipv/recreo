@@ -46,13 +46,12 @@
                 </div>
                 <div class="row m-t-15 m-b--20">
                     <div class="col-lg-12">
-                        {{--<a href="{{ route('register')}}" class="btn btn-block btn-lg bg-indigo waves-effect">Registar un nuevo colegio</a>--}}
-                        @if($access == 'Y')
+                        <a href="{{ route('register')}}" class="btn btn-block btn-lg bg-indigo waves-effect">Registar un nuevo colegio</a>
+                       {{-- @if($access == 'Y')
                             <a href="{{ route('access.index') }}" type="button"
-                               class="btn btn-block btn-lg btn-success waves-effect" style="color: chartreuse">Descarga
-                                de pruebas</a>
-                        @endif
-                        <a href="#" class="btn btn-block btn-lg bg-indigo waves-effect">Registar un nuevo colegio</a>
+                               class="btn btn-block btn-lg btn-success waves-effect" style="color: chartreuse">Descargar grillas de corrección</a>
+                        @endif--}}
+                        {{--<a href="#" class="btn btn-block btn-lg bg-indigo waves-effect">Registar un nuevo colegio</a>--}}
                     </div>
                     <div class="col-xs-6 align-right">
                         {{--                    <a href="{{ route('password.request') }}" class="btn btn-block btn-lg bg-red waves-effect">Olvide mi Contraseña</a>--}}

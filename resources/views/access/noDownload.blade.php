@@ -4,7 +4,7 @@
         <div class="card">
             <div class="body">
                 <div class="msg">
-                    Usted no tiene permisos para descargar las evaluaciones, por favor comuniquese con el mail
+                    Usted no tiene permisos para descargar las grillas, por favor comuniquese con el mail
                     oacj@uncu.edu.ar
                 </div>
                 <div class="row m-t-20 m-b--5 align-center">
